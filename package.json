@@ -3,8 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "bootstrap": "4.0.0-alpha.6",
+    "eslint-plugin-jasmine": "^2.2.0",
     "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "react-addons-css-transition-group": "^15.5.2",
+    "react-addons-transition-group": "^15.5.2",
+    "react-dom": "^15.5.4",
+    "reactstrap": "^4.5.0"
   },
   "devDependencies": {
     "autoprefixer": "6.7.2",
@@ -49,7 +54,8 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js --env=jsdom"
+    "test": "node scripts/test.js --env=jsdom",
+    "lint": "eslint \"src/**/*.js\""
   },
   "jest": {
     "collectCoverageFrom": [
