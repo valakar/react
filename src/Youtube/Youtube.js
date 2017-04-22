@@ -4,26 +4,28 @@ class Youtube extends Component {
     constructor() {
         super();
         this.state = {
-            users: null
+            videos: null
         };
     }
 
     componentDidMount() {
-        fetch('https://api.github.com/users')
+        fetch(`https://www.googleapis.com/customsearch/v1?key=${process.env.GOOGLE_KEY}&q=dark%20souls`)
             .then(res => res.json())
-            .then(users => {
-                this.setState({users});
+            .then(({ items }) => {
+                this.setState({
+                    videos: items
+                });
             });
     }
 
     render() {
-        const { users } = this.state;
-        console.log(users);
+        const { videos } = this.state;
+        console.log(videos);
         return (
             <ul className="Youtube">
                 Youtube
-                {users ? (users.map(user => (
-                    <li key={user.id}>{user.login}</li>
+                {videos ? (videos.map((video, index) => (
+                    <li key={index}>{video.title}</li>
                 ))) : null}
             </ul>
         );

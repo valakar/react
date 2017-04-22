@@ -41,5 +41,8 @@ module.exports = {
             'pragma': 'React',  // Pragma to use, default to "React"
             'version': '15.0' // React version, default to the latest React stable release
         }
+    },
+    'globals': {
+        process: true
     }
 };
